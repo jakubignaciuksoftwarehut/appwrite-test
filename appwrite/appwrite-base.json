@@ -1,0 +1,85 @@
+{
+    "projectId": "{{PROJECT_ID}}",
+    "projectName": "{{PROJECT_NAME}}",
+    "collections": [
+        {
+            "$id": "646423393962fd106f62",
+            "$permissions": [],
+            "databaseId": "64642219daf1e9f90df4",
+            "name": "skills",
+            "enabled": true,
+            "documentSecurity": false,
+            "attributes": [
+                {
+                    "key": "userId",
+                    "type": "string",
+                    "status": "available",
+                    "required": true,
+                    "array": false,
+                    "size": 20,
+                    "default": null
+                },
+                {
+                    "key": "name",
+                    "type": "string",
+                    "status": "available",
+                    "required": true,
+                    "array": false,
+                    "size": 255,
+                    "default": null
+                },
+                {
+                    "key": "level",
+                    "type": "integer",
+                    "status": "available",
+                    "required": true,
+                    "array": false,
+                    "min": 0,
+                    "max": 10,
+                    "default": null
+                },
+                {
+                    "key": "experiencePercentInCurrentLevel",
+                    "type": "double",
+                    "status": "available",
+                    "required": false,
+                    "array": false,
+                    "min": 0,
+                    "max": 100,
+                    "default": 0
+                }
+            ],
+            "indexes": []
+        }
+    ],
+    "databases": [
+
+        {
+            "$id": "64642219daf1e9f90df4",
+            "name": "wololo",
+            "$createdAt": "2023-05-17T01:17:27.087+00:00",
+            "$updatedAt": "2023-05-17T01:21:40.469+00:00"
+        }
+    ],
+    "functions": [
+        {
+            "$id": "64643c9b2081e5ffa16a",
+            "name": "List skills",
+            "runtime": "node-16.0",
+            "path": "functions/ListSkills",
+            "entrypoint": "src/index.js",
+            "ignore": [
+                "node_modules",
+                ".npm"
+            ],
+            "execute": [],
+            "events": [],
+            "schedule": "",
+            "timeout": 15,
+            "variables": {
+                "APPWRITE_FUNCTION_ENDPOINT": "{{APPWRITE_FUNCTION_ENDPOINT}}",
+                "APPWRITE_FUNCTION_API_KEY": "{{APPWRITE_API_KEY}}"
+            }
+        }
+    ]
+}
