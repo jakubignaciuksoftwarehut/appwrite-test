@@ -22,8 +22,6 @@ import { MuiInferencer } from "@refinedev/inferencer/mui";
 import { Server } from "utility/config";
 
 const App: React.FC = () => {
-    console.log(Server.databaseID);
-
     return (
         <BrowserRouter>
             <ThemeProvider theme={RefineThemes.Blue}>
@@ -44,6 +42,7 @@ const App: React.FC = () => {
                             {
                                 name: Server.collectionID,
                                 list: "/posts",
+                                create: "/posts/create",
                                 meta: {
                                     label: "posts",
                                 },
@@ -71,6 +70,7 @@ const App: React.FC = () => {
                                 />
                                     <Route path="/posts">
                                         <Route index element={<MuiInferencer />} />
+                                        <Route path="create" element={<MuiInferencer />} />
                                     </Route>
                             </Route>
 
