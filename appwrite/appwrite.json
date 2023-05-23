@@ -1,6 +1,6 @@
 {
-    "projectId": "{{PROJECT_ID}}",
-    "projectName": "{{PROJECT_NAME}}",
+    "projectId": "12",
+    "projectName": "test_ji",
     "collections": [
         {
             "$id": "646423393962fd106f62",
@@ -53,7 +53,6 @@
         }
     ],
     "databases": [
-
         {
             "$id": "64642219daf1e9f90df4",
             "name": "wololo",
@@ -77,8 +76,8 @@
             "schedule": "",
             "timeout": 15,
             "variables": {
-                "APPWRITE_FUNCTION_ENDPOINT": "{{APPWRITE_FUNCTION_ENDPOINT}}",
-                "APPWRITE_FUNCTION_API_KEY": "{{APPWRITE_FUNCTION_API_KEY}}"
+                "APPWRITE_FUNCTION_ENDPOINT": "http://172.31.32.20/v1",
+                "APPWRITE_FUNCTION_API_KEY": "079466afb2b81f70ba0bb9f41d4900ea199a7bc644c29fdfb5fe81de3955a7c68af1463b393bcc4ecde32baf59bc787a42f68c060fd9237b0805d66f17b9085488ace8fb8dfd0edfc7f6134925698ea61216c94cf06c91525a09f38ced52fae0cbd4ca7e8cde8190a670defab57506aceb4151d12f4520d5bebb9ba7d2be7a5c"
             }
         }
     ]

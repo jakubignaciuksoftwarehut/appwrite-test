@@ -1,12 +1,11 @@
-# Zeroify experience progress for skill
+# List skills
 
-Welcome to the documentation of this function 👋 We strongly recommend keeping this file in sync with your function's logic to make sure anyone can easily understand your function in the future. If you don't need documentation, you can remove this file.
+This functions list skills present in skills collection.
 
 ## 🤖 Documentation
 
-Simple function similar to typical "hello world" example, but instead, we return a simple JSON that tells everyone how awesome developers are.
-
-<!-- Update with your description, for example 'Create Stripe payment and return payment URL' -->
+Scopes required for running the functions, which should be added to function API KEY:
+documents.read
 
 _Example input:_
 
@@ -20,7 +19,10 @@ _Example output:_
 
 ```json
 {
- "areDevelopersAwesome": true
+    "documents": {
+        "total":0,
+        "documents": []
+    }
 }
 ```
 
