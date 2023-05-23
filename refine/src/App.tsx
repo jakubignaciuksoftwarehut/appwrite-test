@@ -19,8 +19,11 @@ import { appwriteClient } from "utility";
 import { authProvider } from "authProvider";
 import { dataProvider, liveProvider } from "@refinedev/appwrite";
 import { MuiInferencer } from "@refinedev/inferencer/mui";
+import { Server } from "utility/config";
 
 const App: React.FC = () => {
+    console.log(Server.databaseID);
+
     return (
         <BrowserRouter>
             <ThemeProvider theme={RefineThemes.Blue}>
@@ -31,16 +34,18 @@ const App: React.FC = () => {
                 <RefineSnackbarProvider>
                     <Refine
                         routerProvider={routerProvider}
-                        dataProvider={dataProvider(appwriteClient)}
+                        dataProvider={dataProvider(appwriteClient, {
+                            databaseId: Server.databaseID,
+                        })}
                         liveProvider={liveProvider(appwriteClient)}
                         authProvider={authProvider}
                         notificationProvider={notificationProvider}
                         resources={[
                             {
-                                name: "Collection_Id",
+                                name: Server.collectionID,
                                 list: "/posts",
                                 meta: {
-                                    label: "Post",
+                                    label: "posts",
                                 },
                             },
                         ]}
@@ -62,7 +67,7 @@ const App: React.FC = () => {
                             >
                                 <Route
                                     index
-                                    element={<NavigateToResource resource="Collection_Id" />}
+                                    element={<NavigateToResource resource="posts" />}
                                 />
                                     <Route path="/posts">
                                         <Route index element={<MuiInferencer />} />
@@ -72,7 +77,7 @@ const App: React.FC = () => {
                             <Route
                                 element={
                                     <Authenticated fallback={<Outlet />}>
-                                        <NavigateToResource resource="Collection_Id" />
+                                        <NavigateToResource resource="posts" />
                                     </Authenticated>
                                 }
                             >

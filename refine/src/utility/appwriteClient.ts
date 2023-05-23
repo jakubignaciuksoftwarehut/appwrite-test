@@ -1,7 +1,8 @@
 import { Account, Appwrite, Storage } from "@refinedev/appwrite";
+import { Server } from "./config";
 
-const APPWRITE_URL = "http://YOUR_COOL_APPWRITE_API/v1";
-const APPWRITE_PROJECT = "YOUR_APPWRITE_PROJECT_ID";
+const APPWRITE_URL = Server.endpoint;
+const APPWRITE_PROJECT = Server.project;
 
 const appwriteClient = new Appwrite();
 
