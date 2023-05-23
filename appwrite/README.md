@@ -38,7 +38,7 @@ There is bash script for initating data(which can be used for replicating resour
 
 This will ask you to log in to appwrite instance. Make sure to read the description in the script file and information on the screen before you run it!
 
-Important: For deploying he functions, the endpoint and api key has to be provided. Again, read the comments in the script.
+Important: For deploying the functions, the endpoint and api key has to be provided. Again, read the comments in the script.
 
 ### Develop with local appwrite instance, option 2: Don't commit appwrite.json, use other 'base' file to create appwrite.json for each developer.
 
