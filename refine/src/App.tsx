@@ -20,11 +20,13 @@ import { authProvider } from "authProvider";
 import { dataProvider, liveProvider } from "@refinedev/appwrite";
 import { MuiInferencer } from "@refinedev/inferencer/mui";
 import { Server } from "utility/config";
+import { Header } from "components/header";
+import { ColorModeContextProvider } from "contexts/color-mode";
 
 const App: React.FC = () => {
     return (
         <BrowserRouter>
-            <ThemeProvider theme={RefineThemes.Blue}>
+            <ColorModeContextProvider>
                 <CssBaseline />
                 <GlobalStyles
                     styles={{ html: { WebkitFontSmoothing: "auto" } }}
@@ -58,7 +60,9 @@ const App: React.FC = () => {
                             <Route
                                 element={
                                     <Authenticated fallback={<CatchAllNavigate to="/login" />}>
-                                        <ThemedLayoutV2 >
+                                        <ThemedLayoutV2 
+                                            Header={Header}
+                                        >
                                             <Outlet />
                                         </ThemedLayoutV2>
                                     </Authenticated>
@@ -99,7 +103,7 @@ const App: React.FC = () => {
                         <UnsavedChangesNotifier />
                     </Refine>
                 </RefineSnackbarProvider>
-            </ThemeProvider>
+            </ColorModeContextProvider>
         </BrowserRouter>
     );
 };
