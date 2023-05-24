@@ -41,10 +41,10 @@ const App: React.FC = () => {
                         resources={[
                             {
                                 name: Server.collectionID,
-                                list: "/posts",
-                                create: "/posts/create",
+                                list: "/skills",
+                                create: "/skills/create",
                                 meta: {
-                                    label: "posts",
+                                    label: "skills",
                                 },
                             },
                         ]}
@@ -66,9 +66,9 @@ const App: React.FC = () => {
                             >
                                 <Route
                                     index
-                                    element={<NavigateToResource resource="posts" />}
+                                    element={<NavigateToResource resource="skills" />}
                                 />
-                                    <Route path="/posts">
+                                    <Route path="/skills">
                                         <Route index element={<MuiInferencer />} />
                                         <Route path="create" element={<MuiInferencer />} />
                                     </Route>
@@ -77,7 +77,7 @@ const App: React.FC = () => {
                             <Route
                                 element={
                                     <Authenticated fallback={<Outlet />}>
-                                        <NavigateToResource resource="posts" />
+                                        <NavigateToResource resource="skills" />
                                     </Authenticated>
                                 }
                             >
