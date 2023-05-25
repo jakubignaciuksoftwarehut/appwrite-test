@@ -17,7 +17,9 @@ import { authProvider } from "authProvider";
 import { Header } from "components/header";
 import { ColorModeContextProvider } from "contexts/color-mode";
 import { SkillCreate } from "pages/skills/create";
+import { SkillEdit } from "pages/skills/edit";
 import { SkillList } from "pages/skills/list";
+import { SkillShow } from "pages/skills/show";
 import { BrowserRouter, Outlet, Route, Routes } from "react-router-dom";
 import { appwriteClient } from "utility";
 import { Server } from "utility/config";
@@ -44,6 +46,8 @@ const App: React.FC = () => {
                                 name: Server.collectionID,
                                 list: "/skills",
                                 create: "/skills/create",
+                                edit: "/skills/edit/:id",
+                                show: "/skills/show/:id",
                                 meta: {
                                     label: "skills",
                                 },
@@ -74,6 +78,8 @@ const App: React.FC = () => {
                                     <Route path="/skills">
                                         <Route index element={<SkillList />} />
                                         <Route path="create" element={<SkillCreate />} />
+                                        <Route path="edit/:id" element={<SkillEdit />} />
+                                        <Route path="show/:id" element={<SkillShow />} />
                                     </Route>
                             </Route>
 
