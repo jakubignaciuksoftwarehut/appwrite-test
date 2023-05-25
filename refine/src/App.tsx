@@ -1,27 +1,26 @@
+import { CssBaseline, GlobalStyles } from "@mui/material";
+import { dataProvider, liveProvider } from "@refinedev/appwrite";
 import { Authenticated, Refine } from "@refinedev/core";
 import {
     AuthPage,
-    ThemedLayoutV2,
     ErrorComponent,
-    RefineThemes,
-    notificationProvider,
     RefineSnackbarProvider,
+    ThemedLayoutV2,
+    notificationProvider
 } from "@refinedev/mui";
-import { CssBaseline, GlobalStyles } from "@mui/material";
-import { ThemeProvider } from "@mui/material/styles";
 import routerProvider, {
     CatchAllNavigate,
     NavigateToResource,
     UnsavedChangesNotifier,
 } from "@refinedev/react-router-v6";
-import { BrowserRouter, Routes, Route, Outlet } from "react-router-dom";
-import { appwriteClient } from "utility";
 import { authProvider } from "authProvider";
-import { dataProvider, liveProvider } from "@refinedev/appwrite";
-import { MuiInferencer } from "@refinedev/inferencer/mui";
-import { Server } from "utility/config";
 import { Header } from "components/header";
 import { ColorModeContextProvider } from "contexts/color-mode";
+import { SkillCreate } from "pages/skills/create";
+import { SkillList } from "pages/skills/list";
+import { BrowserRouter, Outlet, Route, Routes } from "react-router-dom";
+import { appwriteClient } from "utility";
+import { Server } from "utility/config";
 
 const App: React.FC = () => {
     return (
@@ -73,8 +72,8 @@ const App: React.FC = () => {
                                     element={<NavigateToResource resource="skills" />}
                                 />
                                     <Route path="/skills">
-                                        <Route index element={<MuiInferencer />} />
-                                        <Route path="create" element={<MuiInferencer />} />
+                                        <Route index element={<SkillList />} />
+                                        <Route path="create" element={<SkillCreate />} />
                                     </Route>
                             </Route>
 
